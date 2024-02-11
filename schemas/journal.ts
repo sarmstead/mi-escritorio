@@ -47,6 +47,22 @@ export default {
       validation: (Rule: Rule) => Rule.required(),
     },
     {
+      name: "featuredImage",
+      title: "Featured Image",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alt Text",
+        },
+      ],
+      validation: (Rule: Rule) => Rule.required(),
+    },
+    {
       name: "metaDescription",
       type: "text",
       title: "Meta Description",

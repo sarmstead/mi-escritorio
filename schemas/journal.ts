@@ -24,6 +24,13 @@ export default {
       validation: (Rule: Rule) => Rule.required().min(140).max(150),
     },
     {
+      name: "categories",
+      title: "Categories",
+      type: "array",
+      of: [{ type: "reference", to: [{ type: "category" }] }],
+      validation: (Rule: Rule) => Rule.required(),
+    },
+    {
       name: "title",
       type: "string",
       title: "Title",

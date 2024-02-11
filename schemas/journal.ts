@@ -11,6 +11,19 @@ export default {
   },
   fields: [
     {
+      name: "title",
+      type: "string",
+      title: "Title",
+      validation: (Rule: Rule) => Rule.required(),
+    },
+    {
+      name: "publishDate",
+      type: "datetime",
+      title: "Publish Date",
+      initialValue: new Date().toISOString(),
+      validation: (Rule: Rule) => Rule.required(),
+    },
+    {
       name: "authors",
       title: "Authors",
       type: "array",
@@ -28,12 +41,6 @@ export default {
       title: "Categories",
       type: "array",
       of: [{ type: "reference", to: [{ type: "category" }] }],
-      validation: (Rule: Rule) => Rule.required(),
-    },
-    {
-      name: "title",
-      type: "string",
-      title: "Title",
       validation: (Rule: Rule) => Rule.required(),
     },
     {

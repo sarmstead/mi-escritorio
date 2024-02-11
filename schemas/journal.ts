@@ -19,7 +19,7 @@ export default {
     },
     {
       name: "metaDescription",
-      type: "string",
+      type: "text",
       title: "Meta Description",
       validation: (Rule: Rule) => Rule.required().min(140).max(150),
     },

@@ -6,7 +6,12 @@ export default {
     {
       name: "title",
       type: "string",
-      title: "Blog Title"
-    }
-  ]
-}
+      title: "Title",
+    },
+    {
+      name: "body",
+      title: "Body",
+      type: "markdown",
+    },
+  ],
+};

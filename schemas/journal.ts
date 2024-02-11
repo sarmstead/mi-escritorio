@@ -11,17 +11,26 @@ export default {
   },
   fields: [
     {
+      name: "publishDate",
+      type: "datetime",
+      title: "Publish Date",
+      initialValue: new Date().toISOString(),
+      validation: (Rule: Rule) => Rule.required(),
+    },
+    {
       name: "title",
       type: "string",
       title: "Title",
       validation: (Rule: Rule) => Rule.required(),
     },
     {
-      name: "publishDate",
-      type: "datetime",
-      title: "Publish Date",
-      initialValue: new Date().toISOString(),
-      validation: (Rule: Rule) => Rule.required(),
+      name: "slug",
+      type: "slug",
+      title: "Slug",
+      options: {
+        source: "title",
+        auto: true,
+      },
     },
     {
       name: "authors",
@@ -31,17 +40,17 @@ export default {
       validation: (Rule: Rule) => Rule.required(),
     },
     {
-      name: "metaDescription",
-      type: "text",
-      title: "Meta Description",
-      validation: (Rule: Rule) => Rule.required().min(140).max(150),
-    },
-    {
       name: "categories",
       title: "Categories",
       type: "array",
       of: [{ type: "reference", to: [{ type: "category" }] }],
       validation: (Rule: Rule) => Rule.required(),
+    },
+    {
+      name: "metaDescription",
+      type: "text",
+      title: "Meta Description",
+      validation: (Rule: Rule) => Rule.required().min(140).max(150),
     },
     {
       name: "body",

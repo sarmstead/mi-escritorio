@@ -4,7 +4,19 @@ export default {
   name: "journal",
   type: "document",
   title: "Journal",
+  preview: {
+    select: {
+      title: "title",
+    },
+  },
   fields: [
+    {
+      name: "authors",
+      title: "Authors",
+      type: "array",
+      of: [{ type: "reference", to: [{ type: "author" }] }],
+      validation: (Rule: Rule) => Rule.required(),
+    },
     {
       name: "metaDescription",
       type: "string",

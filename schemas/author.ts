@@ -30,6 +30,11 @@ export default {
       validation: (Rule: Rule) => Rule.required(),
     },
     {
+      name: "bio",
+      type: "text",
+      title: "Bio",
+    },
+    {
       name: "photo",
       type: "image",
       title: "Head Shot",

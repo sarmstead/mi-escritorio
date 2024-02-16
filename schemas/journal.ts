@@ -66,7 +66,7 @@ export default {
       name: "metaDescription",
       type: "text",
       title: "Meta Description",
-      validation: (Rule: Rule) => Rule.required().min(140).max(150),
+      validation: (Rule: Rule) => Rule.required().max(150),
     },
     {
       name: "body",
